@@ -1,11 +1,13 @@
-import { stayService } from "./service/stay-service";
+import { getStays } from "./service/stay-service";
 import StayFilter from "./ui/stay-filter";
 import StayList from "./ui/stay-list";
 
 export default async function Home() {
-  const stays = await stayService.fetchStays();
+  let stays = await getStays();
+  
+  if (!stays) return;
   return (
-    <main>
+    <main className=" ">
       <StayFilter />
       <StayList stays={stays} />
     </main>

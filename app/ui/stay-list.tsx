@@ -1,8 +1,8 @@
-import { StayModal } from "../service/stay-service";
+import { Stay } from "../model/stay.model";
 import StayPreview from "./stay-preview";
 
 interface Props {
-  stays: StayModal[];
+  stays: Stay[];
 }
 
 export default function StayList({ stays }: Props) {

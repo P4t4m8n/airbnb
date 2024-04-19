@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { faker } from "@faker-js/faker";
 
-const prisma = new PrismaClient();
+export const prisma = new PrismaClient();
 async function main() {
   for (let i = 0; i < 10; i++) {
     const user = await prisma.user.create({
@@ -30,7 +30,7 @@ async function main() {
         price: parseFloat(faker.commerce.price()),
         summary: faker.commerce.productDescription(),
         capacity: faker.number.int({ min: 1, max: 12 }),
-        rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
+        rating: faker.number.float({ min: 0, max: 5 }),
         hostId: user.id,
         locationId: location.id,
         images: {

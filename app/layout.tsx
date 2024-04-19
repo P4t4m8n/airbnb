@@ -1,4 +1,6 @@
-import Header from "./ui/header";
+import Header from "./ui/Header";
+import '@/app/ui/global.css';
+
 
 export default function RootLayout({
   children,
@@ -7,8 +9,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <body className=" flex flex-col" >
       <Header/>
-      <body >{children}</body>
+        {children}</body>
     </html>
   );
 }

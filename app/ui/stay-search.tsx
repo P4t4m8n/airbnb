@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { debounce } from "../service/util";
 import { ChangeEvent } from "react";
+import SearchSVG from "./svgs/search";
 
 export default function StaySearch() {
   const searchParams = useSearchParams();
@@ -22,6 +22,7 @@ export default function StaySearch() {
   return (
     <div className="search">
       <input placeholder="search" onChange={(ev) => handleSearch}></input>
+      <SearchSVG />
     </div>
   );
 }
